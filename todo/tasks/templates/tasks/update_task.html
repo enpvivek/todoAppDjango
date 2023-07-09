@@ -1,0 +1,77 @@
+<style>
+  /* Material Theme */
+  body {
+    background-color: #1a1a1a;
+    color: #fff; /* optional: set text color to white */
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #424242;
+  }
+
+  form input[type="hidden"],
+  form input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-color: white;
+  }
+
+  input[type="submit"] {
+    background-color: #2196f3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  input[type="submit"]:hover,
+  input[type="submit"]:focus {
+    background-color: #0d47a1;
+  }
+
+  /* Dark Theme */
+  body.dark {
+    background-color: #212121;
+    color: white;
+  }
+
+  h3 {
+    color: #ffffff;
+  }
+
+  form input[type="hidden"],
+  form input[type="text"] {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+  }
+
+  input[type="submit"] {
+    background-color: #757575;
+  }
+
+  input[type="submit"]:hover,
+  input[type="submit"]:focus {
+    background-color: #424242;
+  }
+</style>
+
+<h3>Update Task</h3>
+
+<form method="POST" action="">
+  {% csrf_token %} {{form}}
+  <input type="submit" name="Update Task" />
+</form>

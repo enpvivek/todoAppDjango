@@ -1,0 +1,99 @@
+<style>
+  /* Material Theme */
+  body {
+    background-color: #1a1a1a;
+    color: #fff; /* optional: set text color to white */
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #424242;
+    justify-content: center;
+    align-items: center;
+    margin-left: 550px;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form input[type="submit"] {
+    background-color: #2196f3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin-right: 10px;
+  }
+
+  a {
+    background-color: transparent;
+    color: #2196f3;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  a:hover,
+  a:focus {
+    background-color: #b3e5fc;
+  }
+
+  form input[type="submit"]:hover,
+  form input[type="submit"]:focus {
+    background-color: #0d47a1;
+  }
+
+  /* Dark Theme */
+  body.dark {
+    background-color: #212121;
+    color: white;
+  }
+
+  p {
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form input[type="submit"],
+  a {
+    color: white;
+    box-shadow: none;
+  }
+
+  form input[type="submit"] {
+    background-color: #757575;
+  }
+
+  a:hover,
+  a:focus {
+    background-color: #424242;
+  }
+
+  form input[type="submit"]:hover,
+  form input[type="submit"]:focus {
+    background-color: #b3b3b3;
+  }
+</style>
+
+<p>Are you sure you want to delete "{{item}}"?</p>
+
+<div class="button-container">
+  <form method="POST" action="">
+    {% csrf_token %}
+    <input type="submit" name="Confirm" />
+  </form>
+  <a href="{% url 'list' %}">Cancel</a>
+</div>
